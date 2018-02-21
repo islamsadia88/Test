@@ -1,19 +1,32 @@
-import { Component, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { Component, NgZone, ElementRef, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
-import { EmergencyServicesPage } from '../emergency-services/emergency-services';
-import { AppointmentServicesPage } from '../appointment-services/appointment-services';
-import { LoginPage } from '../login/login';
+import { LocationsProvider } from '../../providers/locations/locations';
+import { GoogleMapsProvider } from '../../providers/google-maps/google-maps';
 import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from '@ionic-native/geolocation'; 
 import { googlemaps } from 'googlemaps';
+import { AvailableAmbulancesPage } from '../available-ambulances/available-ambulances';
 import { DataServicesProvider } from '../../providers/data-services/data-services';
 
-@Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
-})
-export class HomePage {
+/**
+ * Generated class for the MapPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+ 
+ 
+ declare var google;
+ 
 
-  @ViewChild('map') mapElement: ElementRef;
+@IonicPage()
+@Component({
+  selector: 'page-map',
+  templateUrl: 'map.html',
+})
+export class MapPage {
+  
+  
+@ViewChild('map') mapElement: ElementRef;
 
   map:any;
   latLng:any;
@@ -26,7 +39,9 @@ export class HomePage {
    }
 
   ionViewDidLoad() {
+    console.log('map ');
     this.loadMap();
+    console.log('map loaded');
   }
 
   loadMap(){
@@ -50,6 +65,7 @@ this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
     }, (err) => {
       alert('err '+err);
     });
+    
 
   }
 
@@ -57,7 +73,7 @@ this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
  /*--------------------Find Nearby Place------------------------*/ 
 
   nearbyPlace(){
-    this.loadMap();
+    //this.loadMap();
     this.markers = [];
     console.log(this.isType);
     let service = new google.maps.places.PlacesService(this.map);
@@ -82,8 +98,7 @@ this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
     }
   }
 
-
-    createMarker(place){
+  createMarker(place){
     
     this.markers = new google.maps.Marker({
         map: this.map,
@@ -101,19 +116,10 @@ this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
   }
 
 
-  
-  
-  emergency_service(){
-    this.nearbyPlace();
-    this.navCtrl.push(EmergencyServicesPage);
-  
-  }
-  
-  
-  
-  login(){
-    this.navCtrl.push(LoginPage);
-  
-  }
 
+  ListPage(){
+    this.navCtrl.push(AvailableAmbulancesPage);
+  }
+ 
+ 
 }

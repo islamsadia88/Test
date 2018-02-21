@@ -1,0 +1,54 @@
+page-available-ambulances {
+    
+    
+    
+    
+    ion-content{
+   // background-image: linear-gradient(rgba(160, 3, 3, 0.6),rgba(160, 3, 3, 0.9)),url('../assets/backGr.png');
+    background-image: linear-gradient(rgba(119, 136, 153, 0.6),rgba(119, 136, 153, 0.6)), url('../assets/gray_back.jpg');
+    background-size: cover;
+    background-position: center;
+
+ 
+     
+    }
+    
+    
+    
+    .clButton
+{
+    color: aliceblue;
+    
+}
+    
+    .ambulanceList{
+        
+        color: oldlace;
+        background-color: darkcyan;
+    }
+    
+    
+    #fab{
+        font-size: 38px;
+        color: black;
+        background-color: darkgrey;
+        
+    }
+
+
+    #ambName{
+
+        color: aquamarine;
+
+    }
+
+    #mapIcon{
+        font-size: 38px;
+        color: cadetblue;
+    }
+
+
+}
+
+
+

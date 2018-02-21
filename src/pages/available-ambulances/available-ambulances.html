@@ -1,0 +1,56 @@
+<!--
+  Generated template for the AvailableAmbulancesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Available Ambulances</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    
+    <ion-item *ngFor="let item of distance" class="ambulanceList" text-wrap>
+     
+         <h2 >{{ item.n }}</h2>
+         
+         <h3 id="ambName">DISTANCE: {{ item.dis }} mi </h3>
+             <a href="tel:07516771756" item-end >
+                  <ion-avatar>
+       
+            <ion-icon  name="call" class="clButton"></ion-icon>
+          </ion-avatar>
+                 </a>
+    </ion-item>
+
+  
+    
+    
+    
+    <ion-item class="ambulanceList">
+     
+         
+         <h2>Sadia Islam</h2>
+         <h3>DISTANCE: 1.5mi </h3>
+             <a href="tel:07516771756" item-end >
+                  <ion-avatar>
+       
+            <ion-icon  name="call" class="clButton"></ion-icon>
+          </ion-avatar>
+                 </a>
+    </ion-item>
+    
+    
+    
+ <ion-fab right bottom >
+    <button ion-fab id="fab" (click)="map_view()"><ion-icon name="locate"></ion-icon></button>
+  
+  </ion-fab>
+
+
+</ion-content>

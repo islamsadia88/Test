@@ -1,17 +1,56 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-header color="danger">
+
+  <ion-navbar no-shadow>
+    <ion-title>HEALTH SERVICE</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only  (click)="clicked()"> 
+        <ion-icon name="search"></ion-icon>
+       
+      </button>
+    </ion-buttons>
+        
+ 
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content no-lines class="card">
+    
+    <div class="center">
+
+    <ion-list no-line>
+        
+        <ion-card>
+             
+            <ion-card-content>
+                <ion-buttons [class]="up_bar" (click)="emergency_service()">
+                    <button id="bu" ion-button full>EMERGENCY SERVICES</button>
+                </ion-buttons>
+                
+          </ion-card-content>
+        </ion-card>
+        
+        
+        
+        <ion-card>
+             
+            <ion-card-content>
+                
+                <ion-buttons [class]="up_bar" (click)="login()">
+                    <button id="bu" ion-button full>BOOK APPOINTMENT</button>
+                </ion-buttons>
+                
+            </ion-card-content>
+        </ion-card>
+                
+                
+          
+        
+       
+        
+    </ion-list>
+        
+        </div>
+
+        <div #map id="map"></div>
+ 
 </ion-content>

@@ -1,8 +1,7 @@
-page-home {
-
-
-
-ion-content{
+page-login {
+    
+    
+     ion-content{
    // background-image: linear-gradient(rgba(160, 3, 3, 0.6),rgba(160, 3, 3, 0.9)),url('../assets/backGr.png');
     background-image: linear-gradient(rgba(119, 136, 153, 0.6),rgba(119, 136, 153, 0.6)), url('../assets/gray_back.jpg');
     background-size: cover;
@@ -13,26 +12,17 @@ ion-content{
     }
     
     
-    .up_bar{
-        background: red;
+    #reg{
+        background-position: center;
+        color: cornflowerblue;
+        
     }
     
-    .nav{
-         background: cadetblue;
-    }
     
     #bu
-{
+    {
 	
     background-color: darkcyan;
-    }	
-    
-    #side
-    {
-        background-color: cadetblue;
     }
-    .center{
-    text-align: center;
-    bottom: auto;
-}
+
 }
