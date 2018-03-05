@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { EmergencyServicesPage } from '../emergency-services/emergency-services';
 import { AppointmentServicesPage } from '../appointment-services/appointment-services';
 import { LoginPage } from '../login/login';
+import { ProfilePage } from '../profile/profile';
 import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from '@ionic-native/geolocation'; 
 import { googlemaps } from 'googlemaps';
 import { DataServicesProvider } from '../../providers/data-services/data-services';
@@ -112,8 +113,42 @@ this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
   
   
   login(){
-    this.navCtrl.push(LoginPage);
+
+    if(this.service.root == false){
+      this.navCtrl.push(LoginPage);
+
+    }
+
+    else{
+      this.navCtrl.push(AppointmentServicesPage);
+    }
+    
   
+  }
+
+  profile(){
+    
+    if(this.service.root == true){
+      console.log('root true . direct profile page', this.service.root);
+      this.navCtrl.push(ProfilePage);
+
+    }
+    else{
+
+      console.log('root false .. else', this.service.root);
+
+      this.service.loginDirectionPage = 1;
+
+      console.log('home page direction value', this.service.loginDirectionPage)
+    
+      this.navCtrl.push(LoginPage);
+
+      console.log('home page clicked value', this.service.loginClicked);
+
+      
+    }
+     
+
   }
 
 }

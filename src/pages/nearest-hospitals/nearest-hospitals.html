@@ -8,6 +8,13 @@
 
   <ion-navbar class="hd">
     <ion-title>Nearest Hospitals</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only  (click)="profile()"> 
+        <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
+       
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
@@ -38,17 +45,4 @@
          
     </ion-item>
     
-    
-    
-    <ion-item class="hospitalList">
-     
-         
-         <h2>Sadia Islam</h2>
-         <h3>DISTANCE: 1.5mi </h3>
-             
-      
-        <ion-icon ios="ios-navigate" md="ios-navigate" class="dirButton" (click)="low_traffic_route()" item-end></ion-icon>
-        <button ion-button color="secondary">Secondary</button>
-    </ion-item>
-
 </ion-content>

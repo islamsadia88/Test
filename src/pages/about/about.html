@@ -1,11 +1,169 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Feedback
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addreview()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+
+
+<ion-content no-lines>
+
+     <ion-refresher (ionRefresh)="doRefresh($event)" no-lines>
+    <ion-refresher-content no-lines
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+      </ion-refresher-content>
+  </ion-refresher>
+ 
+
+  <ion-list no-lines  class="di">
+    <ion-item *ngFor="let item of listitem"  class="feed" text-wrap>
+     <ion-item no-lines class="comment">
+          <ion-avatar item-start>
+            <img src="assets/profile_logo.png">
+          </ion-avatar>
+           <style type="text/css">
+            h5 { word-spacing: 10px; }
+        </style>
+          
+  <ion-grid no-lines>
+    <ion-row><ion-col><h2>{{ item.user_name }}</h2></ion-col></ion-row>
+   <ion-row class="st">
+    <h3> <ion-col *ngIf=" item.rating  >= 1">Ratting :</ion-col>
+    <ion-col *ngIf=" item.rating  == 1">
+      <ion-icon name="star"></ion-icon>
+     </ion-col>
+
+    <ion-col *ngIf=" item.rating  == 2">
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+     </ion-col>
+
+    <ion-col *ngIf=" item.rating  == 3">
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+     </ion-col>
+
+
+     <ion-col *ngIf=" item.rating  == 4">
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+     </ion-col>
+
+
+     <ion-col *ngIf=" item.rating  == 5">
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+     </ion-col>
+     </h3>
+    </ion-row>
+<ion-row>
+ <ion-col>
+   <h5>{{ item.dateposted }}</h5></ion-col></ion-row>
+  
+</ion-grid>
+
+          
+         </ion-item>
+ <ion-item no-lines class="second_"> 
+  
+     <h3 id="h_2">Title : {{ item.title }}</h3>
+     <h4 text-wrap id="des">{{ item.description }}</h4>
+ </ion-item>
+  </ion-item>
+     <!--
+          <ion-avatar item-start>
+       
+            
+          </ion-avatar>
+         <h2>{{ item.username }}</h2>
+         <h3>{{ item.dateposted }}</h3>
+         <p >Title : {{ item.title }}</h3>
+         <h4>{{ item.description }}</h4>
+
+
+<ion-grid>
+  <ion-row>
+    <ion-col *ngIf=" item.rating  == 1">
+      <ion-icon name="star"></ion-icon>
+     </ion-col>
+
+    <ion-col *ngIf=" item.rating  == 2">
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+     </ion-col>
+
+    <ion-col *ngIf=" item.rating  == 3">
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+     </ion-col>
+
+
+     <ion-col *ngIf=" item.rating  == 4">
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+     </ion-col>
+
+
+     <ion-col *ngIf=" item.rating  == 5">
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+     </ion-col>
+
+
+  </ion-row>
+</ion-grid>
+         
+        
+    </ion-item>
+    
+    
+
+
+ 
+      <ion-item-options>
+        <button ion-button color="danger" (click)="deleteReview(review)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    
+ -->
+  </ion-list>
+    
+
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content>
+
+   </ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+ 
+ 
 
 </ion-content>
+ <button ion-button icon-only  (click)="topFunction()" id="myBtn" title="Go to top"> 
+        <ion-icon name="md-arrow-round-up"></ion-icon>
+</button>
+

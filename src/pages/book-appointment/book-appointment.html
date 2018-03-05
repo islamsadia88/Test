@@ -8,6 +8,13 @@
 
   <ion-navbar>
     <ion-title>Select a category</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only  (click)="profile()"> 
+        <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
+       
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
@@ -20,7 +27,7 @@
      
          
          <ion-list inset>
-                <button id="c" ion-item (click)="doctors_list()">
+                <button id="c" ion-item (click)="doctors_list('Gynecologist')">
                         GYNECOLOGIST
                 </button> 
         </ion-list>
@@ -28,7 +35,7 @@
      
          
          <ion-list inset>
-                <button id="c" ion-item (click)="doctors_list()">
+                <button id="c" ion-item (click)="doctors_list('Dentist')">
                         DENTAL
                 </button> 
         </ion-list>
@@ -36,7 +43,7 @@
      
          
          <ion-list inset>
-                <button id="c" ion-item (click)="doctors_list()">
+                <button id="c" ion-item (click)="doctors_list('Medicine')">
                         MEDICINE
                 </button> 
         </ion-list>

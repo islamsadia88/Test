@@ -17,32 +17,54 @@
     
     <ion-card>
              
-            <ion-card-content>    
-    <ion-list>
+      <ion-card-content>    
+        <ion-list>
+    
 
   <ion-item>
-    <ion-label floating>Name</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-label floating>User ID</ion-label>
+    <ion-input [(ngModel)]="data.userID" name="userID" type="text"  ng-required="true"></ion-input>
   </ion-item>
 
- <ion-item>
+  <ion-item>
+    <ion-label floating>Full Name</ion-label>
+		<ion-input numbers-only  [(ngModel)]="data.fullName" name="fullName" type="text" ng-required="true"></ion-input>
+  </ion-item>
+  
+  <ion-item>
     <ion-label floating>Email</ion-label>
-    <ion-input type="text"></ion-input>
+		<ion-input numbers-only  [(ngModel)]="data.email" name="email" type="email" ng-required="true"></ion-input>
   </ion-item>
-        
-        
-    <ion-item>
-        
-        <ion-buttons (click)="login()">
-        <button id="bu" ion-button full>REGISTER</button>
-        </ion-buttons>
-        
-    </ion-item>
+  
+  <ion-item>
+    <ion-label floating>Address</ion-label>
+		<ion-input numbers-only  [(ngModel)]="data.address" name="address" type="text" ng-required="true"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label floating>Phone no.</ion-label>
+		<ion-input numbers-only  [(ngModel)]="data.phone" name="phone" type="text" ng-required="true"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label floating> Password </ion-label>
+		<ion-input numbers-only  [(ngModel)]="data.password" name="password" type="password" ng-required="true"></ion-input>
+  </ion-item>
 
-</ion-list>
+
+
+  
+  <button id="regbtn" ion-button block outline  (click)="register()">Register</button>
+
+
+
+      </ion-list>
                 
                 
-     </ion-card-content>
-    </ion-card>
+    </ion-card-content>
+
+<button ion-button clear full (click)="login()" id="bu">Already have an account? Sign in</button>
+
+  </ion-card>
 
 </ion-content>

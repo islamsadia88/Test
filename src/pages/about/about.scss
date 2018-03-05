@@ -1,3 +1,73 @@
 page-about {
+    ion-content{
+   // background-image: linear-gradient(rgba(160, 3, 3, 0.6),rgba(160, 3, 3, 0.9)),url('../assets/backGr.png');
+    background-image: linear-gradient(rgba(119, 136, 153, 0.6),rgba(119, 136, 153, 0.6)), url('../assets/gray_back.jpg');
+    background-size: cover;
+    background-position: center;
+
+ 
+     
+    }
+
+     .feed ion-card
+  {
+
+    background-color: rgba(0,0,0,0);
+
+  }
+
+ .comment
+  {
+    background-color:darkcyan;
+    color: white;
+  }
+
+  .feed ion-avatar img
+{
+     //background-image: url('../assets/ff.jpg');
+     background-size:cover;
+     height: 40px;
+     width: 40px;
+     text-align: center;
+    // padding: 10px; 
+     font-size:18px;
+     color: white;
+}
+
+.st{
+    background-color: darkcyan;
+    color: cyan;
+}
+
+.feed h2
+{
+  
+  font-size: 18px;
+  color: white;
+  font-weight: 900;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+#h_2{
+    font-size: 18px;
+    font-weight: 400;
+    color: azure;
+}
+
+.second_{
+    background-color: darkcyan;
+
+}
+
+#des{
+    color: azure;
+}
+
+
+
+
+
+
 
 }

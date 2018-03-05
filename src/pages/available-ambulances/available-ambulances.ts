@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MapPage } from '../map/map';
 import { DataServicesProvider } from '../../providers/data-services/data-services';
+import { ProfilePage } from '../profile/profile';
+import { LoginPage } from '../login/login';
+
 
 /**
  * Generated class for the AvailableAmbulancesPage page.
@@ -112,6 +115,32 @@ export class AvailableAmbulancesPage {
     list_view(){
     this.navCtrl.push(AvailableAmbulancesPage);
   
+  }
+
+
+  profile(){
+    
+    if(this.service.root == true){
+      console.log('root true . direct profile page', this.service.root);
+      this.navCtrl.push(ProfilePage);
+
+    }
+    else{
+
+      console.log('root false .. else', this.service.root);
+
+      this.service.loginDirectionPage = 1;
+
+      console.log('home page direction value', this.service.loginDirectionPage)
+    
+      this.navCtrl.push(LoginPage);
+
+      console.log('home page clicked value', this.service.loginClicked);
+
+      
+    }
+     
+
   }
   
   

@@ -25,6 +25,13 @@ import { DoctorsListPage } from '../pages/doctors-list/doctors-list';
 import { BookingConfirmationPage } from '../pages/booking-confirmation/booking-confirmation';
 import { BookedListPage } from '../pages/booked-list/booked-list';
 import { TrackPage } from '../pages/track/track';
+import { DoctorsTimeTablePage } from '../pages/doctors-time-table/doctors-time-table';
+import { BookingFailledPage } from '../pages/booking-failled/booking-failled';
+import { ManageProfilePage } from '../pages/manage-profile/manage-profile';
+import { HelpPage } from '../pages/help/help';
+import { AddReviewPage } from '../pages/add-review/add-review';
+
+import { IonRatingComponent } from '../components/ion-rating/ion-rating';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -56,7 +63,13 @@ import { LocationsProvider } from '../providers/locations/locations';
     DoctorsListPage,
     BookingConfirmationPage,
     BookedListPage,
-    TrackPage
+    TrackPage,
+    DoctorsTimeTablePage,
+    BookingFailledPage,
+    ManageProfilePage,
+    HelpPage,
+    AddReviewPage,
+    IonRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +96,12 @@ import { LocationsProvider } from '../providers/locations/locations';
     DoctorsListPage,
     BookingConfirmationPage,
     BookedListPage,
-    TrackPage
+    TrackPage,
+    DoctorsTimeTablePage,
+    BookingFailledPage,
+    ManageProfilePage,
+    HelpPage,
+    AddReviewPage
   ],
   providers: [
     StatusBar,

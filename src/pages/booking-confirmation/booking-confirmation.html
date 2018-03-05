@@ -7,7 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>BookingConfirmation</ion-title>
+    <ion-title>Booking Confirmation</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only  (click)="profile()"> 
+        <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
+       
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
@@ -22,7 +29,7 @@
     Success!
   </ion-card-header>
   <ion-card-content>
-    <p id="t">Thank you for booking appointment. Your serial number is: 3</p>
+    <p id="t">Thank you for booking appointment. Your serial number is: {{ serial_ }}</p>
       
       <button id="btn" ion-button (click)="booked_list()">See your booked list</button>
       
