@@ -4,6 +4,8 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { ProfilePage } from '../profile/profile';
+import { LoginPage } from '../login/login';
+import { DataServicesProvider } from '../../providers/data-services/data-services';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -11,11 +13,18 @@ import { ProfilePage } from '../profile/profile';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = ProfilePage;
+  
   tab3Root = AboutPage;
   tab4Root = ContactPage;
 
-  constructor() {
+  constructor( private service:DataServicesProvider) {
+
+  
+
+   
 
   }
+
+ 
+
 }

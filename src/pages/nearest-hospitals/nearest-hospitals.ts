@@ -4,6 +4,9 @@ import { LowTrafficRoutePage } from '../low-traffic-route/low-traffic-route';
 import { DataServicesProvider } from '../../providers/data-services/data-services';
 import { AlertController } from 'ionic-angular';
 import { SMS } from '@ionic-native/sms';
+import { ProfilePage } from '../profile/profile';
+import { LoginPage } from '../login/login';
+
 
 /**
  * Generated class for the NearestHospitalsPage page.
@@ -153,6 +156,34 @@ export class NearestHospitalsPage {
     });
     confirm.present();
   }
+
+
+
+  profile(){
+    
+    if(this.service.root == true){
+      console.log('root true . direct profile page', this.service.root);
+      this.navCtrl.push(ProfilePage);
+
+    }
+    else{
+
+      console.log('root false .. else', this.service.root);
+
+      this.service.loginDirectionPage = 1;
+
+      console.log('home page direction value', this.service.loginDirectionPage)
+    
+      this.navCtrl.push(LoginPage);
+
+      console.log('home page clicked value', this.service.loginClicked);
+
+      
+    }
+     
+
+  }
+
 
 
   ionViewDidLoad() {

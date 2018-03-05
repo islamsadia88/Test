@@ -14,37 +14,20 @@
 
 
 <ion-content padding>
-    
-    <ion-item class="trackList">
-     
-         
-         <h2>Serial number: 1</h2>
-         <h3>Estimated time: Done</h3>
-        
-          
-    </ion-item>
-    
-    
-    
-       <ion-item class="trackList">
-     
-         
-          <h2>Serial number: 2</h2>
-         <h3>Estimated time: Running</h3>
-             
 
-    </ion-item>
-    
-    
-    
-        <ion-item class="trackList">
-     
-         
-          <h2>Serial number: 3</h2>
-         <h3>Estimated time: 1 hr</h3>
-             
 
+  <ion-item *ngFor="let item of listitem" class="trackList" text-wrap >
+     
+    
+          <h2> Serial Number: {{ item.serial_num }} </h2>
+          <ion-avatar id = "sub_info">
+          <h3> Estimated Time: {{ item.status_ }}hr </h3>
+          </ion-avatar>
+         
     </ion-item>
+
+
+    
     
     
 

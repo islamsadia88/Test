@@ -1,3 +1,16 @@
 page-contact {
+    ion-content{
+   // background-image: linear-gradient(rgba(160, 3, 3, 0.6),rgba(160, 3, 3, 0.9)),url('../assets/backGr.png');
+    background-image: linear-gradient(rgba(119, 136, 153, 0.6),rgba(119, 136, 153, 0.6)), url('../assets/gray_back.jpg');
+    background-size: cover;
+    background-position: center;
+
+ 
+     
+    }
+
+    .list{
+        background-color: darkcyan;
+    }
 
 }

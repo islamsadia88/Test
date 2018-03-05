@@ -7,48 +7,41 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>BookedList</ion-title>
+    <ion-title>Booked List</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only  (click)="profile()"> 
+        <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
+       
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    
-    
-    <ion-item class="doctorList">
+
+
+
+  <ion-item *ngFor="let item of listitem" class="doctorList" text-wrap >
      
-         
-         <h2>Doctor's name</h2>
-         <h3>Specialist: </h3>
-         <h3>organization name: </h3>
+    
+          <h2> Dr. {{ item.doc_name }} </h2>
+          <ion-avatar id = "sub_info">
+          <h3> {{ item.speciality }}</h3>
+          <h3> Appointment Day:{{ item.appointment_day }} </h3>
+          <h3> Your Serial Number: {{ item.serial_num }} </h3>
+          </ion-avatar>
+
+          <ion-avatar item-end>
         
-            <ion-avatar item-end>
-        
-            <button id="bookButton" ion-button color="light" round (click)="track()">Track</button>
+            <button id="bookButton" ion-button color="light" round (click)="track(item.doc_id,item.appointment_day)">Track</button>
         
         </ion-avatar>
-             
-
-    </ion-item>
-    
-    
-    
-       <ion-item class="doctorList">
-     
          
-         <h2>Sadia Islam</h2>
-         <h3>Specialist: </h3>
-         <h3>organization name: </h3>
-        
-            <ion-avatar item-end>
-        
-            <button id="bookButton" ion-button color="light" round (click)="track()">Track</button>
-        
-        </ion-avatar>
-             
-
     </ion-item>
+    
     
 
 </ion-content>
